@@ -73,14 +73,20 @@ def exec_query(query, filename = 'staging.csv'):
         print("Directory ", dirName, " Created ")
     else:
         print("Directory ", dirName, " already exists")
+
     with open('files/csv/'+filename, 'w+') as write_file:
         conn = sqlite3.connect('database/staging.db')
         cursor = conn.cursor()
         select_query = query
         data = cursor.execute(select_query)
+        return list(data)
         names = [description[0] for description in data.description]
         writer = csv.writer(write_file)
         writer.writerow(names)
         writer.writerows(data)
         conn.commit()
         conn.close()
+
+'''
+To return the column 
+'''

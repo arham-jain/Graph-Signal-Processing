@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom"
+     xmlns="http://www.w3.org/1999/html">
+      <h1 class="h2">Select Parameters</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group mr-2">
+          <button class="btn btn-sm btn-outline-secondary">Share</button>
+          <button class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+      </div>
+    </div>
+
+    <h4>Select Database</h4>
+    <div class="input-group mb-3">
+      <!--<select class="custom-select" id="database">
+        <option selected>Select Database</option>
+        {% for item in db %}
+          <option value={{ item }}>{{ item }}</option>
+        {% endfor %}
+      </select>-->
+        <form method="POST">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                <label id="database">Select the database containing KPI data</label><br>
+                {{ form.database }}
+            </div>
+            <div class="form-group">
+                <label id="kpi">Select KPI from list</label><br>
+                {{ form.kpi }}
+            </div>
+            <div class="form-group">
+                <label id="year">Enter year of data to be considered (1950-2008)</label><br>
+                {{ form.year }}
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}
