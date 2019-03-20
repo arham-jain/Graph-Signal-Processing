@@ -5,6 +5,19 @@ import json
 
 app = Flask(__name__)
 
+
+'''
+Route pate = "/" "/home"
+
+Displays Usage Instruction of the Dashboard
+'''
+@app.route('/')
+@app.route('/home')
+@app.route('/home/<string:name>')
+def usage_instructions(name="Guest"):
+    return render_template('basic/usage.html', data=name)
+
+
 '''
 Route path = "/dashboard/indicator_code/year"
 
@@ -25,7 +38,7 @@ def dashboard(indicator_code,year):
         "kpivalues": df[year].tolist()
     }
     print(dict_payload)
-    return render_template("dashboard_test.html", data=dict_payload)
+    return render_template("basic/home.html", data=dict_payload)
 
 if __name__=="__main__":
     app.run(debug=True)
