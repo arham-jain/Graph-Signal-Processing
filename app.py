@@ -15,8 +15,8 @@ Route pate = "/" "/home"
 Displays Usage Instruction of the Dashboard
 '''
 @app.route('/')
-@app.route('/home')
-@app.route('/home/<string:name>')
+@app.route('/dashboard')
+@app.route('/dashboard/<string:name>')
 def usage_instructions(name="Guest"):
     return render_template('basic/usage.html', data=name)
 
