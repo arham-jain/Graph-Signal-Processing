@@ -27,3 +27,13 @@ Once you activated your virtualenv everything you are doing is confined inside t
 Once the virtual environment is activated. Use the following command to download all the python dependencies
 
 ```python -m pip install -r requirements.txt```
+
+## Run the project
+
+Head to the directory of the project and run the following command:
+
+```python app.py```
+
+The URL's Currently working are:
+- http://127.0.0.1:5000/dashboard/indicator_code/year
+  Example use: http://127.0.0.1:5000/dashboard/SP.POP.DPND/1999
