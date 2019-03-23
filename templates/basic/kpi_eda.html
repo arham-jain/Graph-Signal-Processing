@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+  <h1 class="h2">Exploratory Data Analysis, for {{ data.kpi_name }}</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group mr-2">
+      <button class="btn btn-sm btn-outline-secondary">Share</button>
+      <button class="btn btn-sm btn-outline-secondary">Export</button>
+    </div>
+  </div>
+</div>
+
+<!--Box Plot, Scatter Plot, central tendency table-->
+
+<h4>Data Preview</h4>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <tbody>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Country Name</th>
+          <th>{{ data.kpi_name }} ({{ data.kpi_year }})</th>
+        </tr>
+      </thead>
+      {% for country, kpi in data.coun_kpi %}
+      <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ country }}</td>
+          <td>{{ kpi }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

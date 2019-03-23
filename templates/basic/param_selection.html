@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <h4>Select Database</h4>
+    <h4>Select KPI</h4>
     <div class="input-group mb-3">
       <!--<select class="custom-select" id="database">
         <option selected>Select Database</option>
@@ -21,18 +21,38 @@
         {% endfor %}
       </select>-->
         <form method="POST">
-            {{ form.csrf_token }}
+            {{ form_kpi.csrf_token }}
             <div class="form-group">
-                <label id="database">Select the database containing KPI data</label><br>
-                {{ form.database }}
+                <label id="database-1">Select the database containing KPI data</label><br>
+                {{ form_kpi.database }}
             </div>
             <div class="form-group">
                 <label id="kpi">Select KPI from list</label><br>
-                {{ form.kpi }}
+                {{ form_kpi.kpi }}
             </div>
             <div class="form-group">
-                <label id="year">Enter year of data to be considered (1950-2008)</label><br>
-                {{ form.year }}
+                <label id="year-1">Enter year of data to be considered (1950-2008)</label><br>
+                {{ form_kpi.year }}
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+
+    <h4>Select Graph Connectivity Data:</h4>
+    <div class="input-group mb-3">
+        <form method="POST">
+            {{ form_conn.csrf_token }}
+            <div class="form-group">
+                <label id="database-2">Select the database containing Connectiviy data</label><br>
+                {{ form_conn.database }}
+            </div>
+            <div class="form-group">
+                <label id="conn">Select Graph Connectivity Parameter from list</label><br>
+                {{ form_conn.conn }}
+            </div>
+            <div class="form-group">
+                <label id="year-2">Enter year of data to be considered (1950-2008)</label><br>
+                {{ form_conn.year }}
             </div>
             <input type="submit">
         </form>

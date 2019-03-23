@@ -1,0 +1,8 @@
+Instructions
+Goto the parameter selection tab and select a database from the existing list of databases.
+The list of available KPI from the selected database is loaded dynamicaally.
+Enter the year for which the KPI data is to be considered.
+Select the connectivity parameter for the graph in the same manner.
+You can now view the EDA for the KPI data and the Graph data explicitely.
+After which the GSP results tab is activated.
+"Note: To add a new database, .csv format is required."
