@@ -1,13 +1,22 @@
-import numpy as np
-from pygsp import graphs
-import matplotlib.pyplot as plt
+from scipy.sparse import coo_matrix
 
-communities = [40, 80, 60]
-G = graphs.Community(N=180, Nc=3, comm_sizes=communities)
-f = np.random.normal(size=G.N)
-G.compute_fourier_basis()
-f_hat = G.gft(f)
-fig, axes = plt.subplots(1, 2, figsize=(10, 4))
-G.plot_signal(f, vertex_size=30, ax=axes[0])
-axes[1].plot(G.e, np.abs(f_hat))
-plt.show()
+class GSP:
+    def __init__(self, kpi_zip, conn_zip):
+        kpi_zip = dict(kpi_zip)
+        conn_zip = dict(conn_zip)
+        common = set(kpi_zip.keys()) & set(conn_zip.keys())
+        all = set(kpi_zip.keys()) | set(conn_zip.keys())
+        for item in (all - common):
+            if item in kpi_zip:
+                del kpi_zip[item]
+            if item in conn_zip:
+                del conn_zip[item]
+        self.kpi_dict = kpi_zip
+        self.conn_dict = conn_zip
+        self.is_connected = False
+
+    def graph_signal(self):
+        pass
+
+    def gsp_plots(self):
+        pass

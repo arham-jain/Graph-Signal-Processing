@@ -1,13 +1,11 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 from KPI_Automation import select_query, exec_query
 import pandas as pd
-import json
-import glob
-from flask_wtf import FlaskForm
-from wtforms import SelectField, StringField, validators, IntegerField
+from forms import Param_conn_select_form, Param_kpi_select_form
+from config import Config
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret'
+app.config.from_object(Config)
 
 '''
 Route pate = "/" "/home"
@@ -24,22 +22,6 @@ def usage_instructions(name="Guest"):
         'instructions': df['Instructions'].tolist()
     }
     return render_template('basic/usage.html', data=usage_payload)
-
-''''''
-class Param_kpi_select_form(FlaskForm):
-    database = SelectField('Database', choices=[('staging','stageing.db',)])
-    kpi = SelectField('KPI', choices=[])
-    year = IntegerField('Year',[
-        validators.DataRequired(),
-        validators.NumberRange(min=1950,max=2008)
-    ])
-class Param_conn_select_form(FlaskForm):
-    database = SelectField('Database', choices=[('staging','stageing.db',)])
-    conn = SelectField('Connectivity Parameter', choices=[])
-    year = IntegerField('Year',[
-        validators.DataRequired(),
-        validators.NumberRange(min=1950,max=2008)
-    ])
 
 
 '''
