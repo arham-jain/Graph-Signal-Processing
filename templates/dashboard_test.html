@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ data.name }}</title>
+    <title>{{ data.kpi_name }}</title>
 </head>
 <body>
     <ul>
@@ -11,7 +11,7 @@
         {% endfor %}
     </ul>
     <ul>
-        {% for item in data.kpivalues%}
+        {% for item in data.kpi_values%}
             <li>{{ item }}</li>
         {% endfor %}
     </ul>

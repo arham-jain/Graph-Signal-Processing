@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 from KPI_Automation import select_query, exec_query
 import pandas as pd
 import json
@@ -44,7 +44,7 @@ def param_selection():
 
     if request.method == "POST":
         if form.validate_on_submit():
-            return '<h1>DB: {}, KPI: {}, YEAR: {}</h1>'.format(form.database.data, form.kpi.data, form.year.data)
+            return redirect('/dashboard/{}/{}'.format(form.kpi.data, form.year.data))
     return render_template('basic/param_selection.html', form=form)
 
 '''
@@ -62,12 +62,12 @@ def dashboard(indicator_code,year):
     df = pd.read_csv('files/csv/'+filename+'.csv')
     df = df.dropna()
     dict_payload = {
-        "name": indicator_code,
+        "kpi_name": indicator_code,
         "countries": df['Country Name'].tolist(),
-        "kpivalues": df[year].tolist()
+        "kpi_values": df[year].tolist()
     }
     print(dict_payload)
-    return render_template("basic/home.html", data=dict_payload)
+    return render_template("dashboard_test.html", data=dict_payload)
 
 if __name__=="__main__":
     app.run(debug=True)
