@@ -41,3 +41,5 @@ The URL's Currently working are:
 - http://127.0.0.1:5000/dashboard/param_selection
 - http://127.0.0.1:5000/dashboard/indicator_code/year
   Example use: http://127.0.0.1:5000/dashboard/SP.POP.DPND/1999
+- http://127.0.0.1:5000/dashboard/gspboard
+- http://127.0.0.1:5000/dashboard/gspboard/new
