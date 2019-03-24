@@ -63,7 +63,6 @@ def kpi_eda(indicator_code,year):
         "kpi_year": year,
         "coun_kpi": zip(df['Country Name'].tolist(),df[year].tolist())
     }
-    print(dict_payload)
     return render_template("basic/kpi_eda.html", data=dict_payload)
 
 if __name__=="__main__":
