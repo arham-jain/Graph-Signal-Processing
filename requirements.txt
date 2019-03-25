@@ -1,0 +1,8 @@
+flask==1.0.2
+pandas==0.23.4
+matplotlib==3.0.2
+numpy==1.15.4
+flask_wtf==0.14.2
+wtforms==2.2.1
+scipy==1.1.0
+pygsp==0.5.1

@@ -6,7 +6,6 @@ from config import Config
 import matplotlib.pyplot as plt
 import numpy as np
 from Graph_Automation import GSP
-from time import sleep
 
 app = Flask(__name__)
 app.config.from_object(Config)
