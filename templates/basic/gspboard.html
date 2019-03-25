@@ -5,8 +5,7 @@
   <h1 class="h2">Graph Signal Processing Plots</h1>
   <div class="btn-toolbar mb-2 mb-md-0">
     <div class="btn-group mr-2">
-      <button class="btn btn-sm btn-outline-secondary">Share</button>
-      <button class="btn btn-sm btn-outline-secondary">Export</button>
+      <a href="/dashboard/gspboard/new"><button class="btn btn-sm btn-outline-secondary">Refresh</button></a>
     </div>
   </div>
 </div>
@@ -15,28 +14,28 @@
 <h4>The Graph Along with the Graph Signal</h4>
 <div class="row text-center">
   <div class="col-md-6">
-    <img src="{{ url_for('static', filename='images/gsp/graph.png') }}">
+    <img src="{{ url_for('static', filename='images/gsp/graph.png') }}" height='auto' width="500px">
   </div>
   <div class="col-md-6">
-    <img src="{{ url_for('static', filename='images/gsp/graph_signal.png') }}">
+    <img src="{{ url_for('static', filename='images/gsp/graph_signal.png') }}" height='auto' width="500px">
   </div>
 </div>
 
 <h4>Four most Dominant Eigen Vectors</h4>
 <div class="row text-center">
   <div class="col-md-6">
-    <img src="{{ url_for('static', filename='images/gsp/eigen_vector1.png') }}">
+    <img src="{{ url_for('static', filename='images/gsp/eigen_vector1.png') }}" height='auto' width="500px">
   </div>
   <div class="col-md-6">
-    <img src="{{ url_for('static', filename='images/gsp/eigen_vector2.png') }}">
+    <img src="{{ url_for('static', filename='images/gsp/eigen_vector2.png') }}" height='auto' width="500px">
   </div>
 </div>
 <div class="row text-center">
   <div class="col-md-6">
-    <img src="{{ url_for('static', filename='images/gsp/eigen_vector3.png') }}">
+    <img src="{{ url_for('static', filename='images/gsp/eigen_vector3.png') }}" height='auto' width="500px">
   </div>
   <div class="col-md-6">
-    <img src="{{ url_for('static', filename='images/gsp/eigen_vector4.png') }}">
+    <img src="{{ url_for('static', filename='images/gsp/eigen_vector4.png') }}" height='auto' width="500px">
   </div>
 </div>
 
